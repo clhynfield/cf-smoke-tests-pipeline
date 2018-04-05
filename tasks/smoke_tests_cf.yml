@@ -1,0 +1,23 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: cfcloudops/cf-smoke-tests
+inputs:
+  - name: cf-smoke-tests
+  - name: cloudops-ci
+run:
+  path: tasks/smoke_tests_cf.sh
+
+params:
+  cf_api: replace-me
+  cf_user: replace-me
+  cf_password: replace-me
+  cf_org: replace-me
+  cf_space: replace-me
+  smoke_tests_apps_domain: replace-me
+  datadog_key: replace-me
+  deployment: replace-me
+  syslog_ip_address: replace-me
+  loggregator_enabled: 0
